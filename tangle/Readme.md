@@ -27,7 +27,7 @@ program, with each version colocating all the code related to new features.
 Read more:
 * http://akkartik.name/post/wart-layers
 * http://akkartik.name/post/literate-programming
-* https://github.com/akkartik/mu/blob/master/000organization.cc
+* https://github.com/akkartik/mu1/blob/master/000organization.cc
 
 ## directives
 

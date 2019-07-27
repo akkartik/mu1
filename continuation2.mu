@@ -2,8 +2,8 @@
 # multiple times from the same point (but with changes to data).
 #
 # To run:
-#   $ git clone https://github.com/akkartik/mu
-#   $ cd mu
+#   $ git clone https://github.com/akkartik/mu1
+#   $ cd mu1
 #   $ ./mu continuation2.mu
 #
 # Expected output:

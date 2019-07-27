@@ -1,6 +1,3 @@
-_(Current development is in the [`subx/`](https://github.com/akkartik/mu/blob/master/subx/Readme.md)
-sub-directory. That prototype will be promoted to the top-level one day.)_
-
 Mu explores ways to turn arbitrary manual tests into reproducible automated
 tests. Hoped-for benefits:
 
@@ -87,10 +84,6 @@ of features usually associated with higher-level languages: strong
 type-safety, function overloading, lexical scope, generic functions,
 higher-order functions, and [delimited continuations](http://akkartik.name/coroutines-in-mu).
 
-Mu is currently interpreted and too slow for graphics or sound. Kartik is
-working on a way to compile it to native code. Recent activity is all in the
-[`subx/`](https://github.com/akkartik/mu/tree/master/subx) directory.
-
 *Taking Mu for a spin*
 
 Mu is currently implemented in C++ and requires a Unix-like environment. It's
@@ -99,7 +92,7 @@ recent versions of GCC and Clang. Since it uses no bleeding-edge language
 features and has no exotic dependencies, it should work with most reasonable
 versions, compilers or processors.
 
-[![Build Status](https://api.travis-ci.org/akkartik/mu.svg)](https://travis-ci.org/akkartik/mu)
+[![Build Status](https://api.travis-ci.org/akkartik/mu1.svg)](https://travis-ci.org/akkartik/mu1)
 
 Running Mu will always (re)compile it if necessary:
 
@@ -395,7 +388,7 @@ b) Try running the tests:
   $ ./mu test
   ```
 
-c) Check out [the programming environment](https://github.com/akkartik/mu/tree/master/edit#readme),
+c) Check out [the programming environment](https://github.com/akkartik/mu1/tree/master/edit#readme),
 the largest app built so far in Mu.
 
 d) Check out the tracing infrastructure which gives you a maps-like zoomable

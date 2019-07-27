@@ -7,7 +7,6 @@
 
 // Still plenty of holes:
 // - unnecessarily linking definition location to itself
-//   - except SubX definitions, which start at start of line
 // - can't detect strings in spite of attempt to support them below, because
 //   Vim's generated html turns quotes into html entities
 // - distinguishing function and variable names
@@ -131,15 +130,11 @@ void replace_tags_in_file(const string& filename, const map<string, syminfo>& in
       out << line.substr(0, skip_first_span);
       istringstream in2(line.substr(skip_first_span));
       in2 >> std::noskipws;
-      // only in .subx files, refuse to linkify the first word on a line
-      bool at_start_of_line = ends_with(filename, ".subx.html");
-//?       cerr << filename << ": " << at_start_of_line << '\n';
       while (has_data(in2)) {
         if (isspace(in2.peek())) {
 //?           cerr << "space\n";
           char c;  in2 >> c;
           out << c;
-          at_start_of_line = false;
         }
         // within a line, send straight through all characters inside '<..>'
         else if (in2.peek() == '<') {
@@ -150,8 +145,6 @@ void replace_tags_in_file(const string& filename, const map<string, syminfo>& in
             out << c;
             if (c == '>') break;
           }
-          // don't include initial tag when computing 'at_start_of_line'
-//?           cerr << "end tag\n";
         }
         else {
           // send straight through all characters inside strings (handling escapes)
@@ -168,7 +161,6 @@ void replace_tags_in_file(const string& filename, const map<string, syminfo>& in
                 break;
               }
             }
-            at_start_of_line = false;
           }
           else if (c == '\'') {
 //?             cerr << "character\n";
@@ -182,27 +174,23 @@ void replace_tags_in_file(const string& filename, const map<string, syminfo>& in
                 break;
               }
             }
-            at_start_of_line = false;
           }
           // send straight through any characters after '#' (comments)
           else if (c == '#') {
 //?             cerr << "comment\n";
             out << c;
             while (in2 >> c) out << c;
-            at_start_of_line = false;
           }
           // send straight through any characters after '//' (comments)
           else if (c == '/' && in2.peek() == '/') {
 //?             cerr << "comment\n";
             out << c;
             while (in2 >> c) out << c;
-            at_start_of_line = false;
           }
           else {
 //?             cerr << "rest\n";
             if (c == ',' || c == ':') {
               out << c;
-              at_start_of_line = false;
               continue;
             }
             ostringstream out2;
@@ -230,14 +218,8 @@ void replace_tags_in_file(const string& filename, const map<string, syminfo>& in
                 out << symbol;
               }
               else {
-                if (at_start_of_line) {
-//?                   cerr << "  at start of line; refusing to linkify " << symbol << "\n";
-                  out << symbol;
-                }
-                else {
-//?                   cerr << "  link\n";
-                  out << "<a href='" << s.filename << ".html#L" << s.line_num << "'>" << symbol << "</a>";
-                }
+//?                 cerr << "  link\n";
+                out << "<a href='" << s.filename << ".html#L" << s.line_num << "'>" << symbol << "</a>";
               }
             }
           }  // end rest

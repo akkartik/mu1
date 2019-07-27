@@ -3,8 +3,8 @@
 # can 'resume' the paused function call.
 #
 # To run:
-#   $ git clone https://github.com/akkartik/mu
-#   $ cd mu
+#   $ git clone https://github.com/akkartik/mu1
+#   $ cd mu1
 #   $ ./mu continuation1.mu
 #
 # Expected output:

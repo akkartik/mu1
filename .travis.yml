@@ -14,10 +14,6 @@ addons:
 # matrix so we don't time out on Travis
 matrix:
   include:
-    # primary prototype
-    - env: COMMAND=./subx/test_layers
-    - env: COMMAND=./subx/test_apps
-    # other directories
     - env: COMMAND=./test_layers CXX=clang++ START=000 END=040
     - env: COMMAND=./test_layers CXX=clang++ START=040 END=055
     - env: COMMAND=./test_layers CXX=clang++ START=055 END=065

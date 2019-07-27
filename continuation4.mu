@@ -4,8 +4,8 @@
 # Print out a given list of numbers.
 #
 # To run:
-#   $ git clone https://github.com/akkartik/mu
-#   $ cd mu
+#   $ git clone https://github.com/akkartik/mu1
+#   $ cd mu1
 #   $ ./mu continuation4.mu
 #
 # Expected output:

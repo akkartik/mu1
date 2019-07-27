@@ -5,8 +5,8 @@
 # to the third, and so on.
 #
 # To run:
-#   $ git clone https://github.com/akkartik/mu
-#   $ cd mu
+#   $ git clone https://github.com/akkartik/mu1
+#   $ cd mu1
 #   $ ./mu continuation5.mu
 #
 # Expected output:

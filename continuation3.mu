@@ -2,8 +2,8 @@
 # creating different continuation values.
 #
 # To run:
-#   $ git clone https://github.com/akkartik/mu
-#   $ cd mu
+#   $ git clone https://github.com/akkartik/mu1
+#   $ cd mu1
 #   $ ./mu continuation3.mu
 #
 # Expected output:
