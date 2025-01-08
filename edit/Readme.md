@@ -1,4 +1,4 @@
-Environment for learning programming using Mu: http://akkartik.name/post/mu
+Environment for learning programming using Mu: http://akkartik.name/post/mu1
 
 Run it from the `mu` directory:
 

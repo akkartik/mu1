@@ -304,7 +304,7 @@ Another example, this time with concurrency:
 Notice that it repeatedly prints either '34' or '35' at random. Hit ctrl-c to
 stop.
 
-[Yet another example](http://akkartik.github.io/mu/html/channel.mu.html) forks
+[Yet another example](http://akkartik.github.io/mu1/html/channel.mu.html) forks
 two 'routines' that communicate over a channel:
 
   ```shell
@@ -377,7 +377,7 @@ up your screen by default.
 
 If you're still reading, here are some more things to check out:
 
-a) Look at the [chessboard program](http://akkartik.github.io/mu/html/chessboard.mu.html)
+a) Look at the [chessboard program](http://akkartik.github.io/mu1/html/chessboard.mu.html)
 for a more complex example with tests of blocking reads from the keyboard and
 what gets printed to the screen -- things we don't typically associate with
 automated tests.
@@ -409,7 +409,7 @@ etc.) is self-contained and can compile the project by itself. Successive
 versions add new features and configurability -- and complexity -- to the
 compilation process.
 
-f) Try skimming the [colorized source code](https://akkartik.github.io/mu).
+f) Try skimming the [colorized source code](https://akkartik.github.io/mu1).
 You should be able to get a pretty good sense for how things work just by
 skimming the files in order, skimming the top of each file and ignoring
 details lower down.
